@@ -13,13 +13,20 @@
 # View(vehicles)
 
 # Which Accura model has the best hwy MPG in 2015? (without method chaining)
-
+filtered <- filter(vechiles, make == 'Acura', year == 2015)
+best <- filter(filtered, mwy == max(hwy))
+select(best, model)
 
 # Which Accura model has the best hwy MPG in 2015? (nesting functions)
-
+filtered <- filter(vechiles, make == 'Acura', year == 2015)
+best <- filter(filtered, mwy == max(hwy))
+select(
+      filter(vechiles, make == 'Acura', year == 2015), mwy == max(hwy)) , model), 
 
 # Which Accura model has the best hwy MPG in 2015? (pipe operator)
-
+awnser<- vechiles %>% 
+                filter(make == 
+select(best, model)
 
 ### Bonus ###
 
